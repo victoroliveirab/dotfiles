@@ -1,0 +1,5 @@
+require("victor.base")
+require("victor.keymaps")
+require("victor.colorscheme")
+require("victor.plugins")
+require("victor.lsp")
