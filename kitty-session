@@ -1,0 +1,10 @@
+layout grid
+title vim
+cd ~/ptech/stadiumgoods-box
+launch nvim .
+title vim-terminal
+launch zsh
+resize_window narrower 13
+
+new_tab term
+launch zsh
