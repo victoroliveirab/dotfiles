@@ -82,6 +82,7 @@ return packer.startup(function(use)
 
   -- Treesitter
   use { "nvim-treesitter/nvim-treesitter", commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac", run = ":TSUpdate" }
+  use { "p00f/nvim-ts-rainbow", commit = "064fd6c0a15fae7f876c2c6dd4524ca3fad96750" }
   use { "m-demare/hlargs.nvim", commit = "a8667203cf947f89c5303016614fac67f3f691a0", config = function() require("hlargs").setup() end }
 
   -- Editor
