@@ -221,6 +221,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/victoroliveirab/.local/share/nvim/site/pack/packer/start/vim-maximizer",
     url = "https://github.com/szw/vim-maximizer"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/home/victoroliveirab/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 

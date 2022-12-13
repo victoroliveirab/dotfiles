@@ -91,6 +91,7 @@ return packer.startup(function(use)
   use {"JoosepAlviste/nvim-ts-context-commentstring", commit = "2941f0064874b33e93d3a794a8a4e99f5f6ece56", after = 'nvim-treesitter' }
   use { "romgrk/barbar.nvim", commit = "68a2751728f9ab3d3510f0fe9165a2a451aa8727" }
   use { "szw/vim-maximizer", commit = "2e54952fe91e140a2e69f35f22131219fcd9c5f1" }
+  use { "folke/which-key.nvim", commit = "86a58eac6a3bc69f5aa373b29df993d14fda3307" }
 
   -- Formatting
   -- use { "jose-elias-alvarez/null-ls.nvim", commiit = "9c19fb55154e53dadb986d5aceed1c53e3131b35" }
