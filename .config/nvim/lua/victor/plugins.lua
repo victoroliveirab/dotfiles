@@ -86,6 +86,7 @@ return packer.startup(function(use)
   use { "m-demare/hlargs.nvim", commit = "a8667203cf947f89c5303016614fac67f3f691a0", config = function() require("hlargs").setup() end }
 
   -- Editor
+  use { "windwp/nvim-autopairs", commit = "9fa996123031b4cad100bd5afad04384a622c8a7" }
   use { "numToStr/Comment.nvim", commit = "ad7ffa8ed2279f1c8a90212c7d3851f9b783a3d6" }
   use {"JoosepAlviste/nvim-ts-context-commentstring", commit = "2941f0064874b33e93d3a794a8a4e99f5f6ece56", after = 'nvim-treesitter' }
   use { "romgrk/barbar.nvim", commit = "68a2751728f9ab3d3510f0fe9165a2a451aa8727" }
