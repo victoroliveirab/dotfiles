@@ -49,7 +49,7 @@ return packer.startup(function(use)
   use { "folke/tokyonight.nvim", commit = "e6307e12ebe8487d17ec87fe14c3972c21466139" }
 
   -- tmux
-  use { "christoomey/vim-tmux-navigator", commit = "c2dab181185101070b0ad6c33451f4e2f56a446a" }
+  -- use { "christoomey/vim-tmux-navigator", commit = "c2dab181185101070b0ad6c33451f4e2f56a446a" }
 
   -- Statusline
   use { "nvim-lualine/lualine.nvim", commit = "edca2b03c724f22bdc310eee1587b1523f31ec7c" }
@@ -87,7 +87,7 @@ return packer.startup(function(use)
 
   -- Editor
   use { "windwp/nvim-autopairs", commit = "9fa996123031b4cad100bd5afad04384a622c8a7" }
-  use { "numToStr/Comment.nvim", commit = "ad7ffa8ed2279f1c8a90212c7d3851f9b783a3d6" }
+  use { "numToStr/Comment.nvim", commit = "5f01c1a89adafc52bf34e3bf690f80d9d726715d" }
   use {"JoosepAlviste/nvim-ts-context-commentstring", commit = "2941f0064874b33e93d3a794a8a4e99f5f6ece56", after = 'nvim-treesitter' }
   use { "romgrk/barbar.nvim", commit = "68a2751728f9ab3d3510f0fe9165a2a451aa8727" }
   use { "szw/vim-maximizer", commit = "2e54952fe91e140a2e69f35f22131219fcd9c5f1" }
