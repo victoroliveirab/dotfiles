@@ -82,18 +82,18 @@ return packer.startup(function(use)
 
   -- Treesitter
   use { "nvim-treesitter/nvim-treesitter", commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac", run = ":TSUpdate" }
-  use { "p00f/nvim-ts-rainbow", commit = "064fd6c0a15fae7f876c2c6dd4524ca3fad96750" }
-  use { "m-demare/hlargs.nvim", commit = "a8667203cf947f89c5303016614fac67f3f691a0", config = function() require("hlargs").setup() end }
+  use { "p00f/nvim-ts-rainbow", commit = "064fd6c0a15fae7f876c2c6dd4524ca3fad96750" } -- parentheses and such rainbow
+  use { "m-demare/hlargs.nvim", commit = "a8667203cf947f89c5303016614fac67f3f691a0", config = function() require("hlargs").setup() end } -- better code highlights
 
   -- Editor
-  use { "windwp/nvim-autopairs", commit = "9fa996123031b4cad100bd5afad04384a622c8a7" }
-  use { "numToStr/Comment.nvim", commit = "5f01c1a89adafc52bf34e3bf690f80d9d726715d" }
-  use {"JoosepAlviste/nvim-ts-context-commentstring", commit = "2941f0064874b33e93d3a794a8a4e99f5f6ece56", after = 'nvim-treesitter' }
-  use { "romgrk/barbar.nvim", commit = "68a2751728f9ab3d3510f0fe9165a2a451aa8727" }
-  use { "szw/vim-maximizer", commit = "2e54952fe91e140a2e69f35f22131219fcd9c5f1" }
-  use { "folke/which-key.nvim", commit = "86a58eac6a3bc69f5aa373b29df993d14fda3307" }
+  use { "windwp/nvim-autopairs", commit = "9fa996123031b4cad100bd5afad04384a622c8a7" } -- parentheses and such autopair
+  use { "numToStr/Comment.nvim", commit = "5f01c1a89adafc52bf34e3bf690f80d9d726715d" } -- comment code
+  use {"JoosepAlviste/nvim-ts-context-commentstring", commit = "2941f0064874b33e93d3a794a8a4e99f5f6ece56", after = 'nvim-treesitter' } -- commente jsx code
+  use { "romgrk/barbar.nvim", commit = "68a2751728f9ab3d3510f0fe9165a2a451aa8727" } -- opened buffers top menu
+  use { "szw/vim-maximizer", commit = "2e54952fe91e140a2e69f35f22131219fcd9c5f1" } -- maximize one opened window
+  use { "folke/which-key.nvim", commit = "86a58eac6a3bc69f5aa373b29df993d14fda3307" } -- keymaps cheatsheet
 
-  use { "ahmedkhalf/project.nvim", config = function() require("project_nvim").setup({
+  use { "ahmedkhalf/project.nvim", config = function() require("project_nvim").setup({ -- recent projects viewer
     patterns = { "package.json", "jsconfig.json" }
   }) end }
 
