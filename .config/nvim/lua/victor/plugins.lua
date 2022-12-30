@@ -93,6 +93,10 @@ return packer.startup(function(use)
   use { "szw/vim-maximizer", commit = "2e54952fe91e140a2e69f35f22131219fcd9c5f1" }
   use { "folke/which-key.nvim", commit = "86a58eac6a3bc69f5aa373b29df993d14fda3307" }
 
+  use { "ahmedkhalf/project.nvim", config = function() require("project_nvim").setup({
+    patterns = { "package.json", "jsconfig.json" }
+  }) end }
+
   -- Formatting
   -- use { "jose-elias-alvarez/null-ls.nvim", commiit = "9c19fb55154e53dadb986d5aceed1c53e3131b35" }
 

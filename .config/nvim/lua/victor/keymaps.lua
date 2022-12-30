@@ -60,7 +60,7 @@ keymap("i", '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 
 -- Buffer
 
-keymap("n", "<C-w>", ":bd<CR>", opts)
+keymap("n", "<leader>w", ":bd<CR>", opts)
 keymap("n", "<A-,>", "<Cmd>BufferPrevious<CR>", opts)
 keymap("n", "<A-.>", "<Cmd>BufferNext<CR>", opts)
 keymap("n", "<A-c>", "<Cmd>BufferClose<CR>", opts)

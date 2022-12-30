@@ -1,6 +1,8 @@
 local status, telescope = pcall(require, "telescope")
 if (not status) then return end
 
+telescope.load_extension('projects')
+
 local actions = require "telescope.actions"
 local builtin = require "telescope.builtin"
 
@@ -49,6 +51,9 @@ vim.keymap.set('n', ';f',
   end)
 vim.keymap.set('n', ';r', function()
   builtin.live_grep()
+end)
+vim.keymap.set('n', ';p', function()
+  telescope.extensions.projects.projects()
 end)
 vim.keymap.set('n', '\\\\', function()
   builtin.buffers()
