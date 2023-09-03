@@ -36,6 +36,16 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 # 2.4 - nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 
+# 2.5 - Nerd Fonts
+mkdir firacode
+cd firacode
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraCode.tar.xz
+tar -xf FiraCode.tar.xz
+rm -f FiraCode.tar.xz
+mkdir -p ~/.local/share/fonts
+mv FiraCodeNerdFont* ~/.local/share/fonts
+fc-cache -fv
+
 # 3 - Dotfiles
 cd
 git clone https://github.com/victoroliveirab/dotfiles .dotfiles
