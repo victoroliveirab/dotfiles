@@ -17,6 +17,7 @@ alias l='ls -CF'
 alias cls="clear"
 alias vim="nvim"
 alias v="nvim"
+alias lg="lazygit"
 alias setkeyboard="setxkbmap br brk2"
 
 alias utar="tar -zxvf"
@@ -29,7 +30,7 @@ alias ckitty="cd ~/.dotfiles/kitty && nvim ."
 
 alias getpass="pass show -c"
 
-alias aws="AWS_ACCESS_KEY=$(pass show aws/access_id) AWS_SECRET_ACCESS_KEY=$(pass show aws/access_token) aws"
+# alias aws="AWS_ACCESS_KEY=$(pass show aws/access_id) AWS_SECRET_ACCESS_KEY=$(pass show aws/access_token) aws"
 
 stash_all() {
   if [ -n "$1" ]
