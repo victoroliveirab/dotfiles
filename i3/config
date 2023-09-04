@@ -203,7 +203,7 @@ bindsym Print exec --no-startup-id flameshot gui
 bar {
         # status_command i3status
         status_command SCRIPT_DIR=~/.config/i3blocks/i3blocks-contrib i3blocks
-        mode hide
+        # mode hide
         position top
         separator_symbol " "
         font pango:FiraCode Nerd Font Mono 9
