@@ -6,9 +6,11 @@ cd ./install_process
 
 # 1 - install packages via apt-get
 
-sudo apt-get install -y build-essential make cmake git ripgrep python3 flatpak htop curl ninja-build gettext unzip \ 
+sudo apt-get install -y build-essential make cmake git ripgrep python3 flatpak htop curl ninja-build gettext unzip libreadline-dev \ 
                         alsa-utils pipewire pipewire-alsa pulseaudio-utils \
                         i3 i3blocks lxappearance neofetch nitrogen rofi flameshot \
+                        python3 python3-pip \
+                        lua5.3 liblua5.3-dev \
                         pass
 
 # 2 - install packages out of apt-get
@@ -45,6 +47,17 @@ rm -f FiraCode.tar.xz
 mkdir -p ~/.local/share/fonts
 mv FiraCodeNerdFont* ~/.local/share/fonts
 fc-cache -fv
+cd ..
+
+# 2.6 - Luarocks
+mkdir luarocks
+cd luarocks
+curl -R -O http://luarocks.github.io/luarocks/releases/luarocks-3.9.2.tar.gz
+tar -zxf luarocks-3.9.2.tar.gz
+cd luarocks-3.9.2
+./configure
+make
+sudo make install
 
 # 3 - Dotfiles
 cd
