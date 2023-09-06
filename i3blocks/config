@@ -37,9 +37,9 @@ markup=none
 
 [volume]
 #label=♪
-command=$SCRIPT_DIR/volume/volume
+command=$SCRIPT_DIR/volume-pipewire/volume-pipewire
 # color=#ff0000
-label=󰕾
+# label=󰕾
 interval=once
 signal=10
 #STEP=5%
