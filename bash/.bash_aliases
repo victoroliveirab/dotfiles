@@ -31,6 +31,9 @@ alias getpass="pass show -c"
 
 # alias aws="AWS_ACCESS_KEY=$(pass show aws/access_id) AWS_SECRET_ACCESS_KEY=$(pass show aws/access_token) aws"
 
+# The last line is the grep command itself, so should be skipped
+alias jestkillall="ps aux | grep jest | tr -s ' ' | cut -d ' ' -f2 | head -n -1 | xargs kill -9 $1"
+
 setkeyboard() {
   setxkbmap br brk2
   setxkbmap -option caps:escape
