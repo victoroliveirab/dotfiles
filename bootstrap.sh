@@ -8,7 +8,7 @@ cd ./install_process
 
 sudo apt-get install -y build-essential make cmake git ripgrep python3 flatpak htop curl ninja-build gettext unzip libreadline-dev \ 
                         alsa-utils pipewire pipewire-alsa pulseaudio-utils \
-                        i3 i3blocks lxappearance neofetch nitrogen rofi flameshot \
+                        i3 i3blocks lxappearance neofetch nitrogen rofi flameshot fzf \
                         python3 python3-pip \
                         lua5.3 liblua5.3-dev \
                         pass
@@ -67,6 +67,7 @@ rm -f $HOME/.bashrc
 rm -f $HOME/.bash_aliases
 ln -s $(pwd)/bash/.bashrc $HOME/.bashrc
 ln -s $(pwd)/bash/.bash_aliases $HOME/.bash_aliases
+ln -s $(pwd)/bash/.scripts $HOME/
 ln -s $(pwd)/i3 $HOME/.config/
 ln -s $(pwd)/i3status $HOME/.config/
 ln -s $(pwd)/i3blocks $HOME/.config/
