@@ -34,6 +34,7 @@ alias getpass="pass show -c"
 # The last line is the grep command itself, so should be skipped
 alias jestkillall="ps aux | grep jest | tr -s ' ' | cut -d ' ' -f2 | head -n -1 | xargs kill -9 $1"
 alias projects=". ~/.scripts/projects.sh"
+alias workspaces="projects"
 
 setkeyboard() {
   setxkbmap br brk2

@@ -8,6 +8,8 @@ PROJECT=$(find $PROJECTS_ROOT -maxdepth 5 -path "*.git" | \
   sed -e "s|/.git||g" | \
   fzf)
 
-PROJECT_FULL_PATH="$PROJECTS_ROOT/$PROJECT"
-clear
-cd "$PROJECT_FULL_PATH"
+if [[ -n "$PROJECT" ]]; then
+  PROJECT_FULL_PATH="$PROJECTS_ROOT/$PROJECT"
+  clear
+  cd "$PROJECT_FULL_PATH"
+fi
