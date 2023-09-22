@@ -28,6 +28,7 @@ alias crofi="cd ~/.dotfiles/rofi && nvim ."
 alias ckitty="cd ~/.dotfiles/kitty && nvim ."
 
 alias getpass="pass show -c"
+alias lg="lazygit"
 
 # alias aws="AWS_ACCESS_KEY=$(pass show aws/access_id) AWS_SECRET_ACCESS_KEY=$(pass show aws/access_token) aws"
 
