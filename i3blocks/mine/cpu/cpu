@@ -25,9 +25,9 @@ echo $USAGE% # full text
 echo $USAGE% # short text
 
 # color
-if [[ $USAGE -ge 80 ]]; then
+if [[ $USAGE -ge 65 ]]; then
   echo $DANGER_COLOR
-elif [[ $USAGE -ge 50 ]]; then
+elif [[ $USAGE -ge 35 ]]; then
   echo $WARN_COLOR
 else
   echo $OK_COLOR
