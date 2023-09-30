@@ -56,9 +56,6 @@ set_keymap("n", "<Down>", ":resize +1<CR>")
 -- cmp
 set_keymap("i", "<C-s>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 
--- null-ls
-set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<CR>", "Format code")
-
 -- general
 set_keymap("n", "<leader>tg", "<Cmd>!/usr/bin/gedit % & disown ;<CR>", "Open current file on gedit")
 set_keymap("n", "<leader>tr", "<Cmd>lua require('victor.commands').force_treesitter_reparse()<CR>")

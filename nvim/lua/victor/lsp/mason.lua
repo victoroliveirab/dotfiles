@@ -3,7 +3,6 @@ local servers = {
 	"html",
 	"jsonls",
 	"pyright",
-	"rust_analyzer",
 	"lua_ls",
 	"tailwindcss",
 	"tsserver",
@@ -14,9 +13,9 @@ local settings = {
 	ui = {
 		border = "none",
 		icons = {
-			package_installed = "V",
-			package_pending = "L",
-			package_uninstalled = "X",
+			package_installed = "✓",
+			package_pending = "➜",
+			package_uninstalled = "✗",
 		},
 	},
 	log_level = vim.log.levels.INFO,
@@ -37,7 +36,7 @@ if not ok then
 end
 
 for _, server in pairs(servers) do
-	opts = {
+	local opts = {
 		on_attach = require("victor.lsp.handlers").on_attach,
 		capabilities = require("victor.lsp.handlers").capabilities,
 	}
@@ -50,7 +49,7 @@ for _, server in pairs(servers) do
 	end
 
 	if server == "tsserver" then
-		ext = {
+		local ext = {
 			root_dir = lspconfig.util.root_pattern("yarn.lock", "package-lock.json", "lerna.json", ".git"),
 		}
 		opts = vim.tbl_deep_extend("force", ext, opts)

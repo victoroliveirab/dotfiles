@@ -66,9 +66,6 @@ return packer.startup(function(use)
 	use({ "williamboman/mason-lspconfig.nvim" })
 	use("folke/neodev.nvim")
 
-	-- null-ls
-	use({ "jose-elias-alvarez/null-ls.nvim", commit = "c3e678110d5f31854c6575cf4bda3b82f3d4a884" })
-
 	-- treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", commit = "d9be302f7499c203ab274bc2b37f11150a2f8834" })
 	use({ "windwp/nvim-ts-autotag", commit = "fdefe46c6807441460f11f11a167a2baf8e4534b" })
@@ -92,6 +89,8 @@ return packer.startup(function(use)
 	}) -- comment jsx code
 	use({ "szw/vim-maximizer", commit = "2e54952fe91e140a2e69f35f22131219fcd9c5f1" }) -- maximize one opened window
 	use({ "windwp/nvim-autopairs", commit = "03580d758231956d33c8dd91e2be195106a79fa4" }) -- parentheses and such autopair
+	use({ "stevearc/conform.nvim", commit = "37d036704a100ef6e6457be45b4dfc2f8e429572" })
+	use({ "mfussenegger/nvim-lint", commit = "1065763f115a7765ef237347ad676ba348d7193a" })
 	use({
 		"lewis6991/gitsigns.nvim",
 		commit = "ec4742a7eebf68bec663041d359b95637242b5c3",
