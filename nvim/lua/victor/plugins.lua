@@ -54,6 +54,7 @@ return packer.startup(function(use)
 	use({ "saadparwaiz1/cmp_luasnip", commit = "18095520391186d634a0045dacaa346291096566" })
 	use({ "hrsh7th/cmp-nvim-lsp", commit = "59224771f91b86d1de12570b4070fe4ad7cd1eeb" })
 	use({ "hrsh7th/cmp-nvim-lua", commit = "f3491638d123cfd2c8048aefaf66d246ff250ca6" })
+	use({ "onsails/lspkind.nvim", commit = "57610d5ab560c073c465d6faf0c19f200cb67e6e" })
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip", commit = "663d54482b11bca1ce94f56993b9f6ab485a13dc" })
