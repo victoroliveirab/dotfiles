@@ -72,6 +72,7 @@ ln -s $(pwd)/i3 $HOME/.config/
 ln -s $(pwd)/i3status $HOME/.config/
 ln -s $(pwd)/i3blocks $HOME/.config/
 ln -s $(pwd)/rofi $HOME/.config/
+ln -s $(pwd)/kitty $HOME/.config/
 ln -s $(pwd)/nvim $HOME/.config/
 
 # Post Reboot
