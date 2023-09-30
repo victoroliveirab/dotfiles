@@ -131,6 +131,7 @@ return packer.startup(function(use)
 		end,
 	})
 	use({ "seandewar/killersheep.nvim" })
+	use({ "victoroliveirab/requests.nvim" })
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

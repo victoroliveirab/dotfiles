@@ -239,6 +239,11 @@ _G.packer_plugins = {
     path = "/home/victoroliveirab/.local/share/nvim/site/pack/packer/start/promise-async",
     url = "https://github.com/kevinhwang91/promise-async"
   },
+  ["requests.nvim"] = {
+    loaded = true,
+    path = "/home/victoroliveirab/.local/share/nvim/site/pack/packer/start/requests.nvim",
+    url = "https://github.com/victoroliveirab/requests.nvim"
+  },
   ["telescope-node-modules.nvim"] = {
     loaded = true,
     path = "/home/victoroliveirab/.local/share/nvim/site/pack/packer/start/telescope-node-modules.nvim",
