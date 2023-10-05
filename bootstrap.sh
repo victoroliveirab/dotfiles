@@ -6,7 +6,7 @@ cd ./install_process
 
 # 1 - install packages via apt-get
 
-sudo apt-get install -y build-essential make cmake git ripgrep python3 flatpak htop curl ninja-build gettext unzip libreadline-dev \ 
+sudo apt-get install -y build-essential make cmake git ripgrep python3 flatpak htop curl ninja-build gettext unzip libreadline-dev \
                         alsa-utils pipewire pipewire-alsa pulseaudio-utils \
                         i3 i3blocks lxappearance neofetch nitrogen rofi flameshot fzf \
                         python3 python3-pip \
@@ -58,6 +58,12 @@ cd luarocks-3.9.2
 ./configure
 make
 sudo make install
+
+# 2.7 - Lazygit
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+tar xf lazygit.tar.gz lazygit
+sudo install lazygit /usr/local/bin
 
 # 3 - Dotfiles
 cd
