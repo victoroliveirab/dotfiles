@@ -32,7 +32,10 @@ vim.keymap.set("n", ";c", function()
 		no_ignore = false,
 		hidden = false,
 		glob_pattern = {
-			"*CHANGELOG*",
+			"!*CHANGELOG*",
+			"!yarn.lock",
+			"!package-lock.json",
+			"!*__fixtures__*",
 		},
 	})
 end)
