@@ -46,6 +46,13 @@ return packer.startup(function(use)
 	-- statusline
 	use({ "nvim-lualine/lualine.nvim" })
 
+	use({
+		"epwalsh/obsidian.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+	})
+
 	-- cmp
 	use({ "hrsh7th/nvim-cmp", commit = "e7e2ef7031db8e0cfad7ad9916ec766ddd9dbb3b" })
 	use({ "hrsh7th/cmp-buffer", commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" })

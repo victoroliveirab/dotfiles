@@ -13,6 +13,8 @@ treesitter.setup({
 		"jsdoc",
 		"json",
 		"lua",
+		"markdown",
+		"markdown_inline",
 		"prisma",
 		"python",
 		"rust",
@@ -25,6 +27,7 @@ treesitter.setup({
 	},
 	ignore_install = { "" },
 	highlight = {
+		additional_vim_regex_highlighting = { "markdown" },
 		enable = true,
 		disable = function(lang, buf)
 			local max_filesize = 100 * 1024 -- 100 KB

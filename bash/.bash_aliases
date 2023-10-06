@@ -26,6 +26,7 @@ alias cvim="cd ~/.dotfiles/nvim && nvim ."
 alias ci3="cd ~/.dotfiles/i3 && nvim ."
 alias crofi="cd ~/.dotfiles/rofi && nvim ."
 alias ckitty="cd ~/.dotfiles/kitty && nvim ."
+alias notes="cd ~/obsnotes && nvim ."
 
 alias getpass="pass show -c"
 alias lg="lazygit"
