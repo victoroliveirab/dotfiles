@@ -30,12 +30,28 @@ alias ckitty="cd ~/.dotfiles/kitty && nvim ."
 alias getpass="pass show -c"
 alias lg="lazygit"
 
+# git stuff
+alias gf="git fetch"
+alias gs="git status"
+alias gpl="git pull"
+gcb() {
+  git checkout -b "$1"
+}
+gc() {
+  git commit -m "$1"
+}
+alias gps="git push"
+gpsu() {
+  git push --set-upstream origin $(git branch --show-current)
+}
+
 # alias aws="AWS_ACCESS_KEY=$(pass show aws/access_id) AWS_SECRET_ACCESS_KEY=$(pass show aws/access_token) aws"
 
 # The last line is the grep command itself, so should be skipped
 alias jestkillall="ps aux | grep jest | tr -s ' ' | cut -d ' ' -f2 | head -n -1 | xargs kill -9 $1"
 alias projects=". ~/.scripts/projects.sh"
 alias workspaces="projects"
+alias cheat=". ~/.scripts/cheat.sh"
 
 setkeyboard() {
   setxkbmap br brk2
