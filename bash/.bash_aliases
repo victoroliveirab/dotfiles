@@ -69,3 +69,13 @@ stash_all() {
     echo "Stash successfully"
   fi
 }
+
+compileqmk() {
+  rm -rf ~/qmk_firmware/keyboards/keebio/iris/keymaps/victoroliveirab/
+  cp -r ~/.dotfiles/keyboard/victoroliveirab/ ~/qmk_firmware/keyboards/keebio/iris/keymaps/
+  qmk compile -kb keebio/iris/rev5 -km victoroliveirab
+}
+
+flashqmk() {
+  qmk flash -kb keebio/iris/rev5 -km victoroliveirab
+}
