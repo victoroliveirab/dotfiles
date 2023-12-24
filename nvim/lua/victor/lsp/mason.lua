@@ -1,5 +1,6 @@
 local servers = {
 	"cssls",
+  "gopls",
 	"html",
 	"jsonls",
 	"pyright",

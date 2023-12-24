@@ -81,12 +81,13 @@ return packer.startup(function(use)
 	-- editor-related
 	use({
 		"nvim-telescope/telescope.nvim",
-		commit = "203bf5609137600d73e8ed82703d6b0e320a5f36",
+		-- commit = "203bf5609137600d73e8ed82703d6b0e320a5f36",
+    commit = "3f5f165447d797576206e3b9bd555ea8db85b6f2",
 		requires = {
 			"nvim-telescope/telescope-node-modules.nvim",
 		},
 	})
-	use({ "kyazdani42/nvim-tree.lua", commit = "02fdc262eba188198a7deb2117b3b996e6763d65" }) -- file tree
+  use({ "kyazdani42/nvim-tree.lua", commit = "7e5c6731804bd892ace56692784290d2fc5a0f74"})
 	use({ "folke/which-key.nvim", commit = "684e96c5e8477f1ee9b3f2e9a12d802fd12c5531" }) -- keymaps cheatsheet
 	use({ "numToStr/Comment.nvim", commit = "eab2c83a0207369900e92783f56990808082eac2" }) -- comment code
 	use({
@@ -127,7 +128,7 @@ return packer.startup(function(use)
 		commit = "9e829d5cfa3de6a2ff561d86399772b0339ae49d",
 		requires = "kevinhwang91/promise-async",
 	}) -- code folding
-	use({ "ThePrimeagen/harpoon", commit = "21f4c47c6803d64ddb934a5b314dcb1b8e7365dc" })
+	-- use({ "ThePrimeagen/harpoon", commit = "21f4c47c6803d64ddb934a5b314dcb1b8e7365dc" })
 	use({
 		"j-hui/fidget.nvim",
 		tag = "legacy",
