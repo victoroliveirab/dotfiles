@@ -10,6 +10,25 @@ end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
+local cmp_sources = {
+	{ name = "nvim_lsp" },
+	{ name = "nvim_lua" },
+	{ name = "luasnip" },
+	-- Must be above buffer otherwise common names such as header can appear duplicate
+	{ name = "css-utils" },
+	{ name = "buffer" },
+	{ name = "path" },
+}
+
+if string.find(vim.fn.getcwd(), "css.go.to.definition.example.projects") then
+	cmp_sources = {
+		cmp_sources[4],
+	}
+end
+
+print(vim.fn.getcwd())
+print(vim.inspect(cmp_sources))
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -38,13 +57,7 @@ cmp.setup({
 			ellipsis_char = "...",
 		}),
 	},
-	sources = {
-		{ name = "nvim_lsp" },
-		{ name = "nvim_lua" },
-		-- { name = "luasnip" },
-		{ name = "buffer" },
-		{ name = "path" },
-	},
+	sources = cmp_sources,
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,

@@ -75,6 +75,7 @@ return packer.startup(function(use)
 
 	-- treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", commit = "d9be302f7499c203ab274bc2b37f11150a2f8834" })
+	use({ "nvim-treesitter/playground" })
 	use({ "windwp/nvim-ts-autotag", commit = "fdefe46c6807441460f11f11a167a2baf8e4534b" })
 	-- use { "m-demare/hlargs.nvim", config = function() require("hlargs").setup() end }
 
@@ -82,12 +83,12 @@ return packer.startup(function(use)
 	use({
 		"nvim-telescope/telescope.nvim",
 		-- commit = "203bf5609137600d73e8ed82703d6b0e320a5f36",
-    commit = "3f5f165447d797576206e3b9bd555ea8db85b6f2",
+		commit = "3f5f165447d797576206e3b9bd555ea8db85b6f2",
 		requires = {
 			"nvim-telescope/telescope-node-modules.nvim",
 		},
 	})
-  use({ "kyazdani42/nvim-tree.lua", commit = "7e5c6731804bd892ace56692784290d2fc5a0f74"})
+	use({ "kyazdani42/nvim-tree.lua", commit = "7e5c6731804bd892ace56692784290d2fc5a0f74" })
 	use({ "folke/which-key.nvim", commit = "684e96c5e8477f1ee9b3f2e9a12d802fd12c5531" }) -- keymaps cheatsheet
 	use({ "numToStr/Comment.nvim", commit = "eab2c83a0207369900e92783f56990808082eac2" }) -- comment code
 	use({
@@ -140,6 +141,17 @@ return packer.startup(function(use)
 	})
 	use({ "seandewar/killersheep.nvim" })
 	use({ "victoroliveirab/requests.nvim" })
+	use({
+		"/Users/victoroliveirab/workspaces/personal/css-utils.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+		config = function()
+			require("css-utils").setup({
+				dev = true,
+			})
+		end,
+	})
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

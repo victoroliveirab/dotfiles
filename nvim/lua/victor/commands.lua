@@ -13,7 +13,19 @@ local force_treesitter_reparse = function()
 	vim.cmd("write | edit | TSBufEnable highlight")
 end
 
+local clear_log_file = function()
+	local cache_location = vim.fn.stdpath("cache")
+	local file_location = string.format("%s/cssgtd.log", cache_location)
+	local f = io.open(file_location, "w")
+	if not f then
+		return
+	end
+	f:write("")
+	f:close()
+end
+
 return {
+	clear_log_file = clear_log_file,
 	close_buffers_except_current = close_buffers_except_current,
 	force_treesitter_reparse = force_treesitter_reparse,
 }

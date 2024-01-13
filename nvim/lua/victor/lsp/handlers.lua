@@ -83,10 +83,17 @@ M.setup = function()
 
 	vim.diagnostic.config(config)
 
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+	local hoverfn = vim.lsp.with(vim.lsp.handlers.hover, {
 		border = "rounded",
 	})
 
+	local hoverfn2 = function(err, result, ctx, config)
+		print("hoverfn2")
+		print(vim.inspect({ err = err, result = result, ctx = ctx, config = config }))
+		return hoverfn(err, result, ctx, config)
+	end
+
+	vim.lsp.handlers["textDocument/hover"] = hoverfn
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
 		border = "rounded",
 	})
@@ -147,6 +154,26 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
+	if client.name == "html" then
+		local test = { ".note {", "  font-size: 12px;", "  line-height: 16px;", "}" }
+		local f = vim.lsp.handlers["textDocument/hover"]
+		-- client.handlers["textDocument/hover"] = function(a, b, c, d)
+		-- 	print("Inside Handlers")
+		-- 	print(vim.inspect({ a = a, b = b, c = c, d = d }))
+		-- 	-- f(...)
+		-- 	-- if result then
+		-- 	-- 	vim.lsp.util.open_floating_preview(test, "css", {})
+		-- 	-- end
+		-- end
+		-- client.handlers["textDocument/hover"] = function(_, result, method)
+		-- 	if result then
+		--       vim.lsp.handlers.hover
+		-- 		return hover_handler(_, result, method)
+		-- 	end
+		-- 	print("Result and method:")
+		-- 	print(vim.inspect({ method = method, result = result }))
+		-- end
+	end
 	if client.name == "tsserver" then
 		client.server_capabilities.documentFormattingProvider = false
 		vim.notify("TSServer started", vim.log.levels.INFO)
