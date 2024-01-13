@@ -1,4 +1,5 @@
 alias ls='ls --color=auto'
+alias lalt="ls -alt"
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -57,3 +58,5 @@ compileqmk() {
 flashqmk() {
   qmk flash -kb keebio/iris/rev5 -km victoroliveirab
 }
+
+alias grok="ngrok http --domain=sincerely-moved-buzzard.ngrok-free.app $1"
