@@ -54,14 +54,14 @@ return packer.startup(function(use)
 	})
 
 	-- cmp
-	use({ "hrsh7th/nvim-cmp", commit = "e7e2ef7031db8e0cfad7ad9916ec766ddd9dbb3b" })
-	use({ "hrsh7th/cmp-buffer", commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" })
-	use({ "hrsh7th/cmp-path", commit = "91ff86cd9c29299a64f968ebb45846c485725f23" })
-	use({ "hrsh7th/cmp-cmdline", commit = "23c51b2a3c00f6abc4e922dbd7c3b9aca6992063" })
-	use({ "saadparwaiz1/cmp_luasnip", commit = "18095520391186d634a0045dacaa346291096566" })
-	use({ "hrsh7th/cmp-nvim-lsp", commit = "59224771f91b86d1de12570b4070fe4ad7cd1eeb" })
-	use({ "hrsh7th/cmp-nvim-lua", commit = "f3491638d123cfd2c8048aefaf66d246ff250ca6" })
-	use({ "onsails/lspkind.nvim", commit = "57610d5ab560c073c465d6faf0c19f200cb67e6e" })
+	use({ "hrsh7th/nvim-cmp" })
+	use({ "hrsh7th/cmp-buffer" })
+	use({ "hrsh7th/cmp-path" })
+	use({ "hrsh7th/cmp-cmdline" })
+	use({ "saadparwaiz1/cmp_luasnip" })
+	use({ "hrsh7th/cmp-nvim-lsp" })
+	use({ "hrsh7th/cmp-nvim-lua" })
+	use({ "onsails/lspkind.nvim" })
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip", commit = "663d54482b11bca1ce94f56993b9f6ab485a13dc" })
@@ -74,16 +74,14 @@ return packer.startup(function(use)
 	use("folke/neodev.nvim")
 
 	-- treesitter
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", commit = "d9be302f7499c203ab274bc2b37f11150a2f8834" })
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use({ "nvim-treesitter/playground" })
-	use({ "windwp/nvim-ts-autotag", commit = "fdefe46c6807441460f11f11a167a2baf8e4534b" })
+	use({ "windwp/nvim-ts-autotag" })
 	-- use { "m-demare/hlargs.nvim", config = function() require("hlargs").setup() end }
 
 	-- editor-related
 	use({
 		"nvim-telescope/telescope.nvim",
-		-- commit = "203bf5609137600d73e8ed82703d6b0e320a5f36",
-		commit = "3f5f165447d797576206e3b9bd555ea8db85b6f2",
 		requires = {
 			"nvim-telescope/telescope-node-modules.nvim",
 		},
@@ -97,7 +95,7 @@ return packer.startup(function(use)
 		after = "nvim-treesitter",
 	}) -- comment jsx code
 	use({ "szw/vim-maximizer", commit = "2e54952fe91e140a2e69f35f22131219fcd9c5f1" }) -- maximize one opened window
-	use({ "windwp/nvim-autopairs", commit = "03580d758231956d33c8dd91e2be195106a79fa4" }) -- parentheses and such autopair
+	use({ "windwp/nvim-autopairs" }) -- parentheses and such autopair
 	use({ "stevearc/conform.nvim", commit = "37d036704a100ef6e6457be45b4dfc2f8e429572" })
 	use({ "mfussenegger/nvim-lint", commit = "1065763f115a7765ef237347ad676ba348d7193a" })
 	use({
@@ -130,15 +128,16 @@ return packer.startup(function(use)
 		requires = "kevinhwang91/promise-async",
 	}) -- code folding
 	-- use({ "ThePrimeagen/harpoon", commit = "21f4c47c6803d64ddb934a5b314dcb1b8e7365dc" })
-	use({
-		"j-hui/fidget.nvim",
-		tag = "legacy",
-		config = function()
-			require("fidget").setup({
-				-- options
-			})
-		end,
-	})
+	-- use({
+	-- 	"j-hui/fidget.nvim",
+	-- 	tag = "legacy",
+	-- 	config = function()
+	-- 		require("fidget").setup({
+	-- 			-- options
+	-- 		})
+	-- 	end,
+	-- })
+	-- use({ "rcarriga/nvim-notify" })
 	use({ "seandewar/killersheep.nvim" })
 	use({ "victoroliveirab/requests.nvim" })
 	use({
