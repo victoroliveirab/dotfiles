@@ -110,3 +110,8 @@ vim.keymap.set("n", "<leader>op", function()
 	end
 	vim.cmd(string.format(":e %s", filename))
 end, { desc = "Open package file" })
+
+-- Conform
+vim.keymap.set({ "n", "v" }, "<leader>f", function()
+	require("conform").format({ lsp_fallback = true, async = false, timeout_ms = 500 })
+end, { desc = "Format file using conform" })
