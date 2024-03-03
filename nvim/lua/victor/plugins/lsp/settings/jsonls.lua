@@ -135,13 +135,13 @@ local schemas = {
 			["1.1"] = "https://json.schemastore.org/feed.json",
 		},
 	},
-	{
-		description = "Packer template JSON configuration",
-		fileMatch = {
-			"packer.json",
-		},
-		url = "https://json.schemastore.org/packer.json",
-	},
+	-- {
+	-- 	description = "Packer template JSON configuration",
+	-- 	fileMatch = {
+	-- 		"packer.json",
+	-- 	},
+	-- 	url = "https://json.schemastore.org/packer.json",
+	-- },
 	{
 		description = "NPM configuration file",
 		fileMatch = {
