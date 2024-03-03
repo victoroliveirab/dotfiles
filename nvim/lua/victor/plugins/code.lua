@@ -18,67 +18,37 @@ return {
 		end,
 	},
 	{
-		"mfussenegger/nvim-lint",
-		lazy = true,
-		event = "VeryLazy",
+		"jose-elias-alvarez/null-ls.nvim",
+		lazy = false,
+		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
-			local lint = require("lint")
-			lint.linters_by_ft = {
-				javascript = { "eslint" },
-				typescript = { "eslint" },
-				javascriptreact = { "eslint" },
-				typescriptreact = { "eslint" },
-				svelte = { "eslint" },
-				python = { "flake8" },
-			}
+			local null_ls = require("null-ls")
+			local formatting = null_ls.builtins.formatting
+			local diagnostics = null_ls.builtins.diagnostics
+			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
-			local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
-
-			vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
-				group = lint_augroup,
-				callback = function()
-					lint.try_lint()
+			null_ls.setup({
+				debug = false,
+				sources = {
+					formatting.prettier,
+					formatting.black,
+					formatting.stylua,
+					diagnostics.eslint,
+					diagnostics.flake8,
+				},
+				on_attach = function(client, bufnr)
+					if client.supports_method("textDocument/formatting") then
+						vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+						vim.api.nvim_create_autocmd("BufWritePre", {
+							group = augroup,
+							buffer = bufnr,
+							callback = function()
+								vim.lsp.buf.format({ bufnr = bufnr })
+							end,
+						})
+					end
 				end,
 			})
-		end,
-	},
-	{
-		"stevearc/conform.nvim",
-		lazy = true,
-		event = "VeryLazy",
-		config = function()
-			local conform = require("conform")
-
-			conform.setup({
-				formatters_by_ft = {
-					javascript = { "prettier" },
-					typescript = { "prettier" },
-					javascriptreact = { "prettier" },
-					typescriptreact = { "prettier" },
-					svelte = { "prettier" },
-					css = { "prettier" },
-					html = { "prettier" },
-					json = { "prettier" },
-					yaml = { "prettier" },
-					markdown = { "prettier" },
-					graphql = { "prettier" },
-					lua = { "stylua" },
-					python = { "isort", "black" },
-				},
-				format_on_save = {
-					lsp_fallback = true,
-					async = false,
-					timeout_ms = 500,
-				},
-			})
-
-			vim.keymap.set({ "n", "v" }, "<leader>f", function()
-				conform.format({
-					lsp_fallback = true,
-					async = false,
-					timeout_ms = 500,
-				})
-			end, { desc = "Format file using conform" })
 		end,
 	},
 	{
@@ -151,6 +121,7 @@ return {
 		"victoroliveirab/css-utils.nvim",
 		dir = vim.fn.expand("~") .. "/workspaces/personal/css-utils.nvim",
 		lazy = true,
+		enabled = false,
 		event = "VeryLazy",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		-- dev = true,

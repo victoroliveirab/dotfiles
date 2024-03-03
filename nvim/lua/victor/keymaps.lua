@@ -110,8 +110,11 @@ vim.keymap.set("n", "<leader>op", function()
 	end
 	vim.cmd(string.format(":e %s", filename))
 end, { desc = "Open package file" })
+vim.keymap.set("n", "<leader>on", function()
+	require("global-note").toggle_note("project_local")
+end, { desc = "Open notes" })
 
 -- Conform
-vim.keymap.set({ "n", "v" }, "<leader>f", function()
-	require("conform").format({ lsp_fallback = true, async = false, timeout_ms = 500 })
+vim.keymap.set("n", "<leader>f", function()
+	vim.lsp.buf.format()
 end, { desc = "Format file using conform" })
