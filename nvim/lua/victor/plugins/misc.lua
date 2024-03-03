@@ -45,4 +45,42 @@ return {
 			end)
 		end,
 	},
+	{
+		"backdround/global-note.nvim",
+		lazy = true,
+		event = "VeryLazy",
+		config = function()
+			local get_project_name = function()
+				local project_directory, err = vim.loop.cwd()
+				if project_directory == nil then
+					vim.notify(err, vim.log.levels.WARN)
+					return "global.md"
+				end
+
+				local project_name = vim.fs.basename(project_directory)
+				if project_name == nil then
+					vim.notify("Unable to get the project name", vim.log.levels.WARN)
+					return "global.md"
+				end
+
+				return project_name .. ".md"
+			end
+
+			require("global-note").setup({
+				additional_presets = {
+					project_local = {
+						command_name = "ProjectNote",
+						filename = get_project_name,
+						title = " Project Notes ",
+					},
+				},
+				post_open = function(bufnr)
+					vim.keymap.set("n", "q", "<CMD>quit<CR>", {
+						buffer = bufnr,
+						desc = "Close scratchpad",
+					})
+				end,
+			})
+		end,
+	},
 }
