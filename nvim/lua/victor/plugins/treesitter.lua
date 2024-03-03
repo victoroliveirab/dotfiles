@@ -1,4 +1,5 @@
 local languages = {
+	"astro",
 	"bash",
 	"css",
 	"dockerfile",

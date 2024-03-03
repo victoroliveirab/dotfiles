@@ -2,6 +2,7 @@ local lsp_utils = require("victor.plugins.lsp.utils")
 
 local servers = {
 	"astro",
+	"clangd",
 	"cssls",
 	"gopls",
 	"html",
