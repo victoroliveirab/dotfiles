@@ -24,6 +24,7 @@ vim.opt.updatetime = 300 -- faster completion (4000ms default)
 vim.opt.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 vim.opt.expandtab = true -- convert tabs to spaces
 vim.opt.shiftwidth = 2 -- the number of spaces inserted for each indentation
+vim.opt.autoindent = true
 vim.opt.tabstop = 2 -- insert 2 spaces for a tab
 vim.opt.softtabstop = 2
 vim.opt.cursorline = true -- highlight the current line
@@ -33,6 +34,7 @@ vim.opt.signcolumn = "yes" -- always show the sign column, otherwise it would sh
 vim.opt.wrap = false -- display lines as one long line
 vim.opt.scrolloff = 8 -- keep 8 lines clear on vertical scroll
 vim.opt.sidescrolloff = 8 -- keep 8 lines clear on horizontal scroll
+vim.opt.backspace = "indent,eol,start"
 
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
