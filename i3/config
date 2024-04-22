@@ -130,7 +130,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -207,6 +207,10 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
+bindsym --release $mod+a exec "xdotool key --clearmodifiers ctrl+a"
+bindsym --release $mod+c exec "xdotool key --clearmodifiers ctrl+c"
+bindsym --release $mod+v exec "xdotool key --clearmodifiers ctrl+v"
+
 bindsym $mod+r mode "resize"
 
 bindsym Print exec --no-startup-id flameshot gui
@@ -241,4 +245,4 @@ bar {
 for_window [class="^.*"] border pixel 1
 
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id setxkbmap br brk2
+exec --no-startup-id setxkbmap br nativo-us

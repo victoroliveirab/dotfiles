@@ -55,7 +55,7 @@ alias workspaces="projects"
 alias cheat=". ~/.scripts/cheat.sh"
 
 setkeyboard() {
-  setxkbmap br brk2
+  setxkbmap br nativo-us
   setxkbmap -option caps:escape
 }
 
