@@ -31,18 +31,6 @@ return {
 					hidden = false,
 				})
 			end, { desc = "Fuzzy finder" })
-			vim.keymap.set("n", ";c", function()
-				builtin.live_grep({
-					no_ignore = false,
-					hidden = false,
-					glob_pattern = {
-						"!*CHANGELOG*",
-						"!yarn.lock",
-						"!package-lock.json",
-						"!*__fixtures__*",
-					},
-				})
-			end)
 			vim.keymap.set("n", ";r", function()
 				builtin.live_grep()
 			end, { desc = "Live grep" })
@@ -58,6 +46,29 @@ return {
 			vim.keymap.set("n", ";e", function()
 				builtin.diagnostics()
 			end, { desc = "Open diagnostics" })
+
+      -- Specialized greps
+			vim.keymap.set("n", ";gf", function()
+				builtin.live_grep({
+					no_ignore = false,
+					hidden = false,
+					glob_pattern = {
+						"!*CHANGELOG*",
+						"!yarn.lock",
+						"!package-lock.json",
+						"!*__fixtures__*",
+					},
+				})
+			end, { desc = "Grep from important files"})
+
+      vim.keymap.set("n", ";gc", function ()
+       builtin.live_grep({
+          search_dirs = {
+            "cypress"
+          }
+        })
+      end, { desc = "Grep from cypress-related files" })
+
 		end,
 	},
 }
