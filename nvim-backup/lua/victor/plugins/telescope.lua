@@ -23,20 +23,29 @@ return {
 			})
 
 			telescope.load_extension("node_modules")
+			-- telescope.load_extension("advanced_git_search")
 
-      -- General Pickers
 			vim.keymap.set("n", ";f", function()
 				builtin.find_files({
 					no_ignore = false,
 					hidden = false,
 				})
 			end, { desc = "Fuzzy finder" })
-
-			vim.keymap.set("n", ";r", builtin.live_grep, { desc = "Live grep" })
-			vim.keymap.set("n", ";b", builtin.buffers, { desc = "Opened buffers" })
-			vim.keymap.set("n", ";t", builtin.help_tags, { desc = "Help tags" })
-			vim.keymap.set("n", ";;", builtin.resume, { desc = "Open last telescope picker" })
-			vim.keymap.set("n", ";e", builtin.diagnostics, { desc = "Open diagnostics" })
+			vim.keymap.set("n", ";r", function()
+				builtin.live_grep()
+			end, { desc = "Live grep" })
+			vim.keymap.set("n", ";b", function()
+				builtin.buffers()
+			end, { desc = "Opened buffers" })
+			vim.keymap.set("n", ";t", function()
+				builtin.help_tags()
+			end, { desc = "Help tags" })
+			vim.keymap.set("n", ";;", function()
+				builtin.resume()
+			end, { desc = "Open last telescope picker" })
+			vim.keymap.set("n", ";e", function()
+				builtin.diagnostics()
+			end, { desc = "Open diagnostics" })
 
       -- Specialized greps
 			vim.keymap.set("n", ";gf", function()
