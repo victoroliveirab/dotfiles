@@ -26,6 +26,7 @@ vim.opt.relativenumber = true -- set relative numbered lines
 vim.opt.showtabline = 1 -- always show tabs
 vim.opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 vim.opt.wrap = false -- display lines as one long line
+vim.opt.colorcolumn = "100"
 
 -- Editing and Searching
 vim.opt.autoindent = true

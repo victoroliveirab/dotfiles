@@ -4,6 +4,7 @@ local servers = {
 	"cssls",
 	"gopls",
 	"html",
+	"htmx",
 	"jsonls",
 	"pyright",
 	"lua_ls",
@@ -13,5 +14,5 @@ local servers = {
 }
 
 return {
-  servers = servers,
+	servers = servers,
 }
