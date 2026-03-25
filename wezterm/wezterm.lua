@@ -66,6 +66,34 @@ config.keys = {
 		mods = "LEADER",
 		action = action.ActivatePaneDirection("Up"),
 	},
+  {
+    key = "=",
+    mods = "CTRL",
+    action = action.ScrollByPage(-0.5),
+  },
+  {
+    key = "-",
+    mods = "CTRL",
+    action = action.ScrollByPage(0.5),
+  },
+  {
+    key = "r",
+    mods = "LEADER",
+    action = action.PromptInputLine({
+      description = "Set tab name",
+      action = wezterm.action_callback(function(window, pane, line)
+        if line then
+          window:active_tab():set_title(line)
+        end
+      end
+      )
+    }),
+  },
+  {
+    key = "r",
+    mods = "CMD|SHIFT",
+    action = wezterm.action.ReloadConfiguration,
+  },
 }
 
 for i = 1, 9 do
